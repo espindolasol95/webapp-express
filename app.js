@@ -1,5 +1,5 @@
 //importo express
-const express = require (expres)
+const express = require ('express')
 
 //creo l'instanza dell app atraverso  metodo express che ho creato
 
