@@ -1,6 +1,8 @@
 //importo express
 const express = require ('express')
 
+//const conection = require ('./data/db')
+
 //creo l'instanza dell app atraverso  metodo express che ho creato
 
 const app = express()
