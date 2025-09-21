@@ -1,4 +1,4 @@
-// importare la conessione al db
+// importare la connessione al db
 
 const conection = require ('../data/db')
 

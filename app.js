@@ -9,6 +9,9 @@ const app = express()
 // definisco il numero di posrta su qui deve girare  l'applicazione
 const port = process.env.PORT||3000
 
+//importo il router
+const filmRouter = require ('./routers/filmRouter')
+
 app.use(express.static ('public'))
 
 // definisco la rotta base 
