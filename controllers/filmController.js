@@ -13,7 +13,16 @@ const index = (req,res) => {
 } 
 //show
 const show = (req,res) =>{
-     res.send(`Dettaglio film con id ${req.params.id}`);
+    //recupero parametro id
+    const{id} = req.params
+    //creo la query
+    const sqlMovies = 'SELECT * FROM movies WHERE id =?'
+     //passo i parametri
+     conection.query(sqlMovies,[id],(err, resultMovies) => {
+        if (err) return res. status(500).json({error:`errore nella esecuzione : ${err}`} )
+     res.send(resultMovies[0])
+    })
+
 }
 
 module.exports = {
