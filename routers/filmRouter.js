@@ -14,3 +14,6 @@ router.get('/',filmController.index)
 
 //show
 router.get('/:id',filmController.show)
+
+
+module.exports= router
