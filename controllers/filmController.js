@@ -9,3 +9,11 @@ const index = (req,res) => {
 
 } 
 //show
+const show = (req,res) =>{
+    console.log ('mettodo show')
+}
+
+module.exports = {
+    index,
+    show
+}
