@@ -5,12 +5,15 @@ const conection = require ('../data/db')
 // index
 
 const index = (req,res) => {
-    console.log('metodo index')
-
+  const sql = 'SELECT * FROM movies'
+    conection.query(sql,(err, results) => {
+        if (err) return res. status(500).json (`errore nella esecuzione : ${err}` )
+     res.send(results)
+    })
 } 
 //show
 const show = (req,res) =>{
-    console.log ('mettodo show')
+     res.send(`Dettaglio film con id ${req.params.id}`);
 }
 
 module.exports = {

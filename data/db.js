@@ -18,3 +18,5 @@ if(err){
     console.log('Connesione al db avvenuta correttamente')
 }
 })
+
+module.export = connection
