@@ -1,10 +1,16 @@
+// carico le variabili dal file .env
 require('dotenv').config()
+
 //importo express
 const express = require ('express')
 
+//importo cors
+const cors= require ('cors')
 //creo l'instanza dell app atraverso  metodo express che ho creato
-
 const app = express()
+
+//registro il middleware per il cors
+app.use (cors({origin: process.env.FE_APP}))
 
 // definisco il numero di posrta su qui deve girare  l'applicazione
 const port = process.env.PORT||3000
@@ -29,3 +35,4 @@ app.use ('/api/film', filmRouter)
 app.listen(port,()=>{
 console.log(`Server in ascolto sulla porta ${port}`)
 })
+

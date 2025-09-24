@@ -19,4 +19,4 @@ if(err){
 }
 })
 
-module.export = connection
+module.exports = connection
