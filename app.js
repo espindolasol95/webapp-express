@@ -27,7 +27,7 @@ app.get("/",(req,res) => {
 })
 
 // definisco le rotte per i film 
-app.use ('/api/film', filmRouter)
+app.use ('/api/films', filmRouter)
 
 
 //dico al server di rimanere in ascolto 

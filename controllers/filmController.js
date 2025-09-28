@@ -44,13 +44,37 @@ const show = (req,res) =>{
        res.send (filmWithreviews)
 
      })
+    })
+  }
 
      
-    })
+    
+    //addReview
 
-}
+    const addReview = (req, res) =>{
+
+        const {id} = req.params
+        const {name, text, vote} = req.body
+        
+        if(!name||!text||!vote){
+            return res.status(400).json({ error: ' I campi sono obbligatori' })
+        }
+
+        
+         const sql = 'INSERT INTO reviews (movie_id, name, vote, text) VALUES (?, ?, ?, ?)'
+
+       connection.query(sql, [id, name, vote, text], (err, result) => {
+          if (err) return res.status(500).json({ error: err });
+          res.status(201).json({ message: 'Recensione aggiunta', reviewId: result.insertId });
+        
+    });
+};
+
+
+
 
 module.exports = {
     index,
-    show
+    show,
+    addReview
 }
